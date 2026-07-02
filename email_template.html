@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lódri Gergő — email sablon</title>
+</head>
+<!--
+  ARANY-FEKETE EMAIL SABLON  (EmailJS sablonszerkesztőbe bemásolható)
+  Helyettesítők (EmailJS-ben add meg ugyanezekkel a nevekkel):
+    {{from_name}}   – a küldő neve
+    {{from_email}}  – a küldő email-címe
+    {{message}}     – az üzenet szövege
+    {{time}}        – beküldés ideje (opcionális)
+  Email-kliens-barát: táblázatos elrendezés, inline stílusok, web-safe betűk.
+-->
+<body style="margin:0; padding:0; background:#1a1712;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#1a1712; padding:28px 12px;">
+    <tr>
+      <td align="center">
+
+        <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:600px; max-width:600px; background:#0e0c08; border:1px solid #3a2f12; border-radius:10px; overflow:hidden;">
+
+          <tr>
+            <td style="height:4px; background:#d4af37; line-height:4px; font-size:0;">&nbsp;</td>
+          </tr>
+
+          <tr>
+            <td style="padding:30px 36px 8px 36px;" align="center">
+              <div style="font-family:Georgia,'Times New Roman',serif; font-size:20px; letter-spacing:4px; color:#d4af37;">L&nbsp;&middot;&nbsp;G</div>
+              <div style="font-family:Georgia,serif; font-size:23px; color:#f2ede1; margin-top:10px;">Új üzenet a portfólióról</div>
+              <div style="font-family:Arial,Helvetica,sans-serif; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#a39b87; margin-top:6px;">Lódri Gergő — portfólió</div>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding:6px 36px 0 36px;" align="center">
+              <div style="height:1px; width:80px; background:#3a2f12; margin:14px auto;"></div>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding:6px 36px 26px 36px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="font-family:Arial,Helvetica,sans-serif;">
+                <tr>
+                  <td style="padding:10px 0; border-bottom:1px solid #211c12; width:130px; vertical-align:top; color:#d4af37; font-size:12px; letter-spacing:1.5px; text-transform:uppercase;">Név</td>
+                  <td style="padding:10px 0; border-bottom:1px solid #211c12; color:#f2ede1; font-size:15px;">{{from_name}}</td>
+                </tr>
+                <tr>
+                  <td style="padding:10px 0; border-bottom:1px solid #211c12; vertical-align:top; color:#d4af37; font-size:12px; letter-spacing:1.5px; text-transform:uppercase;">E-mail</td>
+                  <td style="padding:10px 0; border-bottom:1px solid #211c12; font-size:15px;"><a href="mailto:{{from_email}}" style="color:#f5d061; text-decoration:none;">{{from_email}}</a></td>
+                </tr>
+                <tr>
+                  <td style="padding:14px 0 4px 0; vertical-align:top; color:#d4af37; font-size:12px; letter-spacing:1.5px; text-transform:uppercase;">Üzenet</td>
+                  <td style="padding:14px 0 4px 0; color:#e6e0d2; font-size:15px; line-height:1.7; white-space:pre-wrap;">{{message}}</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding:0 36px 30px 36px;" align="center">
+              <a href="mailto:{{from_email}}" style="display:inline-block; background:#d4af37; color:#0e0c08; font-family:Arial,Helvetica,sans-serif; font-size:13px; font-weight:bold; letter-spacing:1.5px; text-transform:uppercase; text-decoration:none; padding:13px 30px; border-radius:4px;">Válasz a feladónak</a>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding:16px 36px; background:#0a0805; border-top:1px solid #211c12;" align="center">
+              <div style="font-family:Arial,Helvetica,sans-serif; font-size:11px; letter-spacing:1px; color:#7d765f;">Beérkezett: {{time}}</div>
+              <div style="font-family:Arial,Helvetica,sans-serif; font-size:11px; letter-spacing:1px; color:#5f5a48; margin-top:5px;">&copy; 2026 Lódri Gergő &nbsp;&middot;&nbsp; gergolodri6@gmail.com</div>
+            </td>
+          </tr>
+
+        </table>
+
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
