@@ -87,7 +87,7 @@ navLinks.querySelectorAll('a').forEach(a =>
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok || !data.success) throw new Error(data.message || 'fail');
-      status.style.color = 'var(--gold-light)';
+      status.style.color = 'var(--accent-light)';
       status.textContent = hu ? 'Köszönöm! Az üzenet elküldve.' : 'Thank you! Your message has been sent.';
       f.reset();
     } catch (err) {
@@ -163,7 +163,7 @@ navLinks.querySelectorAll('a').forEach(a =>
   const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: !isMobile });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1.5 : 2));
   const scene = new THREE.Scene();
-  scene.fog = new THREE.FogExp2(0x050505, 0.0125);
+  scene.fog = new THREE.FogExp2(0x060a14, 0.0125);
   const camera = new THREE.PerspectiveCamera(62, 1, 0.1, 400);
   camera.position.set(0, 0, 50);
 
@@ -179,7 +179,7 @@ navLinks.querySelectorAll('a').forEach(a =>
   const nodeGeo = new THREE.BufferGeometry();
   nodeGeo.setAttribute('position', new THREE.BufferAttribute(nodes, 3));
   const nodeMat = new THREE.PointsMaterial({
-    color: 0xf5d061, size: 0.75, transparent: true, opacity: 0.95,
+    color: 0x7de8f7, size: 0.75, transparent: true, opacity: 0.95,
     depthWrite: false, blending: THREE.AdditiveBlending, sizeAttenuation: true, fog: true
   });
   const points = new THREE.Points(nodeGeo, nodeMat);
@@ -197,7 +197,7 @@ navLinks.querySelectorAll('a').forEach(a =>
   }
   const lineGeo = new THREE.BufferGeometry();
   lineGeo.setAttribute('position', new THREE.BufferAttribute(new Float32Array(segs), 3));
-  const lineMat = new THREE.LineBasicMaterial({ color: 0xd4af37, transparent: true, opacity: 0.16, depthWrite: false, blending: THREE.AdditiveBlending, fog: true });
+  const lineMat = new THREE.LineBasicMaterial({ color: 0x22d3ee, transparent: true, opacity: 0.16, depthWrite: false, blending: THREE.AdditiveBlending, fog: true });
   const lines = new THREE.LineSegments(lineGeo, lineMat);
 
   const galaxy = new THREE.Group();
