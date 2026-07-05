@@ -158,6 +158,7 @@ navLinks.querySelectorAll('a').forEach(a =>
 (function () {
   const canvas = document.getElementById('bg3d');
   if (!canvas || !window.THREE) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   const isMobile = window.innerWidth < 760;
   const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: !isMobile });

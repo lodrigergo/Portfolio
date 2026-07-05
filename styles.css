@@ -474,3 +474,11 @@ h1 .accent { filter: none; }
 
 /* honeypot mező elrejtése (CSP-barát, inline style helyett) */
 .hp-field { display: none !important; }
+
+/* csökkentett animáció: háttér- és díszanimációk kikapcsolása */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  #scene::after, .badges-track, .scroll-hint { animation: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .rotator span { transition: none; }
+}
