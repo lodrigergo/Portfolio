@@ -482,3 +482,8 @@ h1 .accent { filter: none; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .rotator span { transition: none; }
 }
+
+/* "Miben tudok segíteni" CTA-sor */
+.help-cta { text-align: center; margin-top: 36px; color: var(--muted); font-size: .98rem; }
+.help-cta a { color: var(--accent-light); text-decoration: none; border-bottom: 1px solid var(--accent); padding-bottom: 2px; }
+.help-cta a:hover { color: var(--accent); }
