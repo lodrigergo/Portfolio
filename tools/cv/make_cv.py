@@ -77,8 +77,20 @@ def build(fn, L):
         c.setFillColor(HexColor('#9fc4cf')); c.setFont('DVB', 10.5)
         c.drawString(M, H-24*mm, L['role'])
         c.setFont('DV', 8.6); c.setFillColor(HexColor('#c7d5db'))
-        c.drawString(M, H-32*mm, 'gergolodri6@gmail.com   ·   +36 20 290 1141   ·   Pécs')
-        c.drawString(M, H-37*mm, 'github.com/lodrigergo   ·   lodrigergo.github.io/Portfolio   ·   linkedin.com/in/gergő-lódri')
+        y1 = H-32*mm
+        c.drawString(M, y1, 'gergolodri6@gmail.com   ·   +36 20 290 1141   ·   Pécs')
+        c.linkURL('mailto:gergolodri6@gmail.com', (M, y1-1.5, M+c.stringWidth('gergolodri6@gmail.com','DV',8.6), y1+9), relative=0, thickness=0)
+        line2 = [('github.com/lodrigergo', 'https://github.com/lodrigergo'),
+                 ('lodrigergo.github.io/Portfolio', 'https://lodrigergo.github.io/Portfolio/'),
+                 ('linkedin.com/in/gergő-lódri-651888382', 'https://www.linkedin.com/in/gerg%C5%91-l%C3%B3dri-651888382/')]
+        x = M; y2 = H-37*mm; sep = '   ·   '
+        for i, (txt, url) in enumerate(line2):
+            c.drawString(x, y2, txt)
+            w = c.stringWidth(txt, 'DV', 8.6)
+            c.linkURL(url, (x, y2-1.5, x+w, y2+9), relative=0, thickness=0)
+            x += w
+            if i < len(line2)-1:
+                c.drawString(x, y2, sep); x += c.stringWidth(sep, 'DV', 8.6)
         footer(c, d)
         c.restoreState()
     def footer(c, d):
@@ -138,7 +150,8 @@ HU = dict(
        ('Frontend és eszközök',['HTML, CSS, JavaScript + Bootstrap 5','Angular keretrendszer','GitHub · Jira · Postman','Scrum és agilis módszertan','Mesterséges intelligencia — automatizálás, agentic coding (Claude)'])],
  s_proj='Projektek',
  proj=[('IAAK Dashboard','PHP',['Az IAAK Dashboard egy olyan felület, amely nagyon hasonlít a KRÉTA-hoz — annak egy továbbgondolt verziója. A Dashboard képes kezelni a diákokkal kapcsolatos információkat (pl. jelenléti mátrix, szabadság, táppénz). Beépített fizetési rendszerrel rendelkezik, és különféle dokumentumok exportálása is lehetséges. PHP nyelven szereztem tapasztalatot ezen a projekten.']),
-       ('Visuelse','Java · JaxRS',['Egy építőipari cégnek fejlesztett dashboard-alkalmazás, amelyben az Excel- és PDF-generálást és -exportot fejlesztettem Java nyelven (JaxRS).'])],
+       ('Visuelse','Java · JaxRS',['Egy építőipari cégnek fejlesztett dashboard-alkalmazás, amelyben az Excel- és PDF-generálást és -exportot fejlesztettem Java nyelven (JaxRS).']),
+       ('Dokumentumfeldolgozó rendszer','PDF · Adatkinyerés',['Dokumentumok automatikus feldolgozása: strukturált adatok kinyerése, kulcsszavas keresés a tartalomban és dinamikus PDF-generálás.'])],
  s_cert='Oklevelek',
  cert=[('Professional Scrum Master I (PSM I)','',['Önerőből, angol nyelven szerzett tanúsítvány.']),
        ('Szoftverfejlesztő és -tesztelő','',['Államilag elismert technikusi szakképesítés.']),
@@ -146,7 +159,6 @@ HU = dict(
  s_int='Érdeklődés',
  int=[('Scrum Master','',['Mély affinitás a Scrum Master pozíció iránt.']),
       ('Adatbázis (MySQL)','',['A fejlesztés mellett adatbázisokkal is foglalkoztam.']),
-      ('Backend (Java, PHP)','',['Ezekben a backend nyelvekben van tapasztalatom.']),
       ('Mesterséges intelligencia','',['Van tapasztalatom agentic coding területén (Claude) és projekt alapú agentek megtervezésében is.'])],
  s_str='Erősségek',
  strengths='Fejlődni akarás   ·   Rugalmasság   ·   Nyitottság   ·   Alkalmazkodás',
@@ -178,7 +190,8 @@ EN = dict(
        ('Frontend & tools',['HTML, CSS, JavaScript + Bootstrap 5','Angular framework','GitHub · Jira · Postman','Scrum and agile methodology','Artificial intelligence — automation, agentic coding (Claude)'])],
  s_proj='Projects',
  proj=[('IAAK Dashboard','PHP',['The IAAK Dashboard is an interface very similar to KRÉTA (the Hungarian school administration system) — a more advanced take on it. The dashboard manages student-related information (e.g. attendance matrix, holidays, sick leave). It has a built-in payment system and can export various documents. I gained PHP experience on this project.']),
-       ('Visuelse','Java · JaxRS',['A dashboard application developed for a construction company, in which I built the Excel and PDF generation and export features in Java (JaxRS).'])],
+       ('Visuelse','Java · JaxRS',['A dashboard application developed for a construction company, in which I built the Excel and PDF generation and export features in Java (JaxRS).']),
+       ('Document processing system','PDF · Data extraction',['Automatic processing of documents: extracting structured data, keyword search within the content and dynamic PDF generation.'])],
  s_cert='Certificates',
  cert=[('Professional Scrum Master I (PSM I)','',['Certification earned independently, in English.']),
        ('Software Developer & Tester','',['State-accredited technician qualification.']),
@@ -186,7 +199,6 @@ EN = dict(
  s_int='Interests',
  int=[('Scrum Master','',['Strong affinity for the Scrum Master role.']),
       ('Databases (MySQL)','',['Beyond development, I have also worked with databases.']),
-      ('Backend (Java, PHP)','',['I have hands-on experience with these backend languages.']),
       ('Artificial Intelligence','',['I have experience with agentic coding (Claude) and with designing project-based agents.'])],
  s_str='Strengths',
  strengths='Eagerness to grow   ·   Flexibility   ·   Openness   ·   Adaptability',

@@ -77,8 +77,8 @@ navLinks.querySelectorAll('a').forEach(a =>
         body: JSON.stringify({
           access_key: ACCESS_KEY,
           botcheck: document.getElementById('cfBot') ? document.getElementById('cfBot').checked : false,
-          subject: '📨 Új üzenet a portfólióról — ' + (n || 'Névtelen'),
-          from_name: 'Portfólió · ' + (n || 'Látogató'),
+          subject: (hu ? '📨 Új üzenet a portfólióról — ' : '📨 New message from the portfolio — ') + (n || (hu ? 'Névtelen' : 'Anonymous')),
+          from_name: (hu ? 'Portfólió · ' : 'Portfolio · ') + (n || (hu ? 'Látogató' : 'Visitor')),
           replyto: em,
           'Név': n || '—',
           'E-mail cím': em || '—',
