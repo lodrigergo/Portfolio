@@ -47,7 +47,7 @@ navLinks.querySelectorAll('a').forEach(a =>
 
 /* ============ Kapcsolati űrlap → valódi email küldés (Web3Forms) ============ */
 (function () {
-  /* >>> IDE ILLESZD BE a web3forms.com-ról kapott Access Key-t (a kötőjelekkel együtt) <<< */
+  /*  Access Key- (a kötőjelekkel együtt) */
   const ACCESS_KEY = 'c07f4c39-e477-4444-96cc-ed7cfb6ef5c4';
 
   const f = document.getElementById('contactForm');
